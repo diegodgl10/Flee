@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TerrainMov : MonoBehaviour
 {
+    public float speed = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class TerrainMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        this.transform.Translate(0, 0, Time.deltaTime * this.speed * -1);
     }
 }
