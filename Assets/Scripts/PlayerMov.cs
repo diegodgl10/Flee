@@ -29,27 +29,6 @@ public class PlayerMov : MonoBehaviour
     // Movimiento del jugador
     private void Movimiento()
     {
-        /*
-        this.horizontalMov = Input.GetAxis("Horizontal");
-        bool disponible =  !Physics.Raycast(transform.position, Vector3.left, 3f, LayerMask.GetMask("Obstacle"));
-        disponible = disponible && !Physics.Raycast(transform.position, Vector3.left, 3f, LayerMask.GetMask("Terrain"));
-        if (disponible == false)
-        {
-            Debug.Log("No esta disponible");
-        }
-        if (this.horizontalMov != 0 && disponible)
-        {
-            float movEnX;
-            if (this.horizontalMov > 0)
-            {
-                movEnX = 8f;
-            } else
-            {
-                movEnX = -8f;
-            }
-            movEnX = movEnX * Time.deltaTime * this.rotationalSpeed;
-            this.transform.Translate(movEnX, 0, 0);
-        }*/
         this.horizontalMov = Input.GetAxis("Horizontal");
         if (this.horizontalMov != 0)
         {
@@ -69,9 +48,8 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
-    /** Verifica si hay colisiones con objetos que tengan un BoxCollider
-     * return True si hay colision, False en otro caso
-     */
+    // Verifica si hay colisiones con objetos que tengan un BoxCollider
+    // return True si hay colision, False en otro caso
     private bool HayColision(Vector3 posicionObjetivo)
     {
         Collider[] colliders = Physics.OverlapBox(posicionObjetivo, GetComponent<Collider>().bounds.size / 2);
@@ -85,9 +63,7 @@ public class PlayerMov : MonoBehaviour
         return false;
     }
 
-    /**
-     * Nos indica si ya paso un segundo
-     */
+    // Nos indica si ya paso el tiempo de espera entre movimientos
     private bool TiempoDeEspera()
     {
         this.tiempoTranscurrido += Time.deltaTime;

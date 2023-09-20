@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3845892878728661634}
   - component: {fileID: 247285125474793337}
   - component: {fileID: 2345290031303887891}
+  - component: {fileID: 1916898286}
   m_Layer: 0
   m_Name: Paco
   m_TagString: Player
@@ -63,6 +64,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1916898286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345290031303887900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb712b2b62ffc944aa174bad4823d547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 25
+  rotationalSpeed: 25
 --- !u!1 &6546677978541273952
 GameObject:
   m_ObjectHideFlags: 0

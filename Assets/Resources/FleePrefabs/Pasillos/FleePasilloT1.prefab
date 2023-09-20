@@ -151,6 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7553667308450300333}
   - component: {fileID: 7368509982344240014}
+  - component: {fileID: 40819473}
   m_Layer: 0
   m_Name: InicioTerreno (2)
   m_TagString: Untagged
@@ -166,8 +167,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2590489243057436337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -80}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3822632282936822632}
@@ -186,6 +187,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 24, y: 14, z: 4}
   m_Center: {x: 0, y: 6, z: 2}
+--- !u!114 &40819473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590489243057436337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe0e7af98f89748b0a50366efe3175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pasilloT1: {fileID: 1870883981502788389}
+  pasilloT2: {fileID: 344604130769618340, guid: 90f0b60e622469b43b65856e2f59ee81, type: 3}
+  spawn: {fileID: 6886436976767465894}
 --- !u!1 &4446071487459365956
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6886436976767465894}
   - component: {fileID: 7617714474705688498}
+  - component: {fileID: 3294640061185697309}
   m_Layer: 0
   m_Name: FinTerreno (2)
   m_TagString: Untagged
@@ -211,8 +228,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4446071487459365956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 80}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 160}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3822632282936822632}
@@ -231,6 +248,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 24, y: 14, z: 4}
   m_Center: {x: 0, y: 6, z: -2}
+--- !u!114 &3294640061185697309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446071487459365956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c8a61cf28af2a479cff9fc70a22066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pasillo: {fileID: 1870883981502788389}
 --- !u!1001 &8989651938336065206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3897998030447449380, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3897998030447449380, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
       propertyPath: m_LocalRotation.w
@@ -318,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9130966570549822528, guid: f9f5169b6e01a1c419d18a83de2bb81b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 9130966570549822528, guid: f9f5169b6e01a1c419d18a83de2bb81b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -376,7 +406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6121516149171977048, guid: 26983612cf27dc34ebaa4a04c5f36ca9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6121516149171977048, guid: 26983612cf27dc34ebaa4a04c5f36ca9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -438,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3897998030447449380, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3897998030447449380, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
       propertyPath: m_LocalRotation.w
