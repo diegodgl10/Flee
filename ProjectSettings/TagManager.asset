@@ -8,6 +8,7 @@ TagManager:
   - Terrain
   - Enemy
   - Backpack
+  - Visivilidad
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMov : MonoBehaviour
 {
     // Velocidad de movimiento y de rotacion
-    public float speed = 25, rotationalSpeed = 25;
+    // private float speed = 25, rotationalSpeed = 25;
     // Movimiento vertial y horizontal
     private float horizontalMov;
 
@@ -14,10 +14,13 @@ public class PlayerMov : MonoBehaviour
     // Variable de tiempo de espera antes de mover de nuevo
     private float intervalo = 0.08f;
 
+    // Nivel de cordura
+    private int cordura;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.cordura = 3;
     }
 
     // Update is called once per frame
@@ -75,4 +78,28 @@ public class PlayerMov : MonoBehaviour
         return false;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            this.cordura = 0;
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            --this.cordura;
+        }
+    }
+
+    /**
+     * Regresa el nivel de cordura
+     */
+    public int getCordura()
+    {
+        return this.cordura;
+    }
 }
