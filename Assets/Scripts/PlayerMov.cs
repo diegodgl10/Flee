@@ -12,12 +12,12 @@ public class PlayerMov : MonoBehaviour
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de mover de nuevo
-    private float intervalo = 0.093f;
+    private float intervalo = 0.08f;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -74,4 +74,5 @@ public class PlayerMov : MonoBehaviour
         }
         return false;
     }
+
 }
