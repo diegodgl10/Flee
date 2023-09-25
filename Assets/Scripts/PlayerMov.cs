@@ -12,15 +12,19 @@ public class PlayerMov : MonoBehaviour
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de mover de nuevo
-    private float intervalo = 0.08f;
+    private float intervalo = 0.07f;
 
     // Nivel de cordura
     private int cordura;
+
+    // Entorno de juego
+    Envirioment envirioment;
 
     // Start is called before the first frame update
     void Start()
     {
         this.cordura = 3;
+        this.envirioment = GameObject.Find("Envirioment").GetComponent<Envirioment>();
     }
 
     // Update is called once per frame
@@ -80,26 +84,51 @@ public class PlayerMov : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Camilla")
         {
-            this.cordura = 0;
-            this.gameObject.SetActive(false);
+            EliminarJugador("Camilla");
+        }
+        if (collision.gameObject.tag == "Botes")
+        {
+            EliminarJugador("Botes");
+        }
+        if (collision.gameObject.tag == "Archivero")
+        {
+            EliminarJugador("Archivero");
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /* Metodo para hacer que el jugador pierda */
+    private void EliminarJugador(string razon)
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            --this.cordura;
-        }
+        this.cordura = 0;
+        this.envirioment.SetRazon(razon);
+        this.envirioment.SetCordura(this.cordura);
+        this.gameObject.SetActive(false);
     }
 
     /**
      * Regresa el nivel de cordura
      */
-    public int getCordura()
+    public int GetCordura()
     {
         return this.cordura;
     }
+
+    /**
+     * Diminuye en 1 el nivel de cordura
+     */
+    public void DisminuirCordura()
+    {
+        if (this.cordura <= 1)
+        {
+            EliminarJugador("Enemy");
+        }
+        else
+        {
+            this.cordura = this.cordura - 1;
+            this.envirioment.SetCordura(this.cordura);
+        }
+    }
+
 }

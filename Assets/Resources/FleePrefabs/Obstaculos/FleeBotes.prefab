@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 4987307135827168330}
   m_Layer: 0
   m_Name: FleeBotes
-  m_TagString: Obstacle
+  m_TagString: Botes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

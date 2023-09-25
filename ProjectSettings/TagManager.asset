@@ -4,11 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
   - Terrain
   - Enemy
   - Backpack
   - Visivilidad
+  - Camilla
+  - Botes
+  - Archivero
   layers:
   - Default
   - TransparentFX
