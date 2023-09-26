@@ -51,7 +51,6 @@ public class Envirioment : MonoBehaviour
         } else if (TiempoDeEspera())
         {
             this.distancia++;
-            Debug.Log(this.corduraPlayer);
             this.tmpDistancia.text = this.distancia.ToString();
         }
     }

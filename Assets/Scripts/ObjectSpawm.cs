@@ -5,12 +5,12 @@ using UnityEngine;
 public class ObjectSpawm : MonoBehaviour
 {
     // Spawn de enemigos
-    public GameObject[] spawnsEnemigos = new GameObject[6];
+    public GameObject[] spawnsEnemigos = new GameObject[8];
     public GameObject enemigo;
 
     // Spawn de obstaculos
-    public GameObject[] spawnsObstaculos = new GameObject[12];
-    public GameObject[] obstaculos = new GameObject[3];
+    public GameObject[] spawnsObstaculos = new GameObject[14];
+    public GameObject[] obstaculos = new GameObject[2];
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class ObjectSpawm : MonoBehaviour
     // Spawnea enemigos de forma aleatoria
     private void SpawnEnemys()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < this.spawnsEnemigos.Length; i++)
         {
             int colocarlo = Random.Range(1, 6);
             if (colocarlo == 1)
@@ -37,12 +37,12 @@ public class ObjectSpawm : MonoBehaviour
     {
         int posicion = 0;
         int obstacleRandom;
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < this.spawnsObstaculos.Length; i++)
         {
-            int colocarlo = Random.Range(0, 5);
-            if (colocarlo != 1)
+            int colocarlo = Random.Range(1, 3);
+            if (colocarlo == 1)
             {
-                obstacleRandom = Random.Range(0, 3);
+                obstacleRandom = Random.Range(0, 2);
                 Instantiate(this.obstaculos[obstacleRandom], this.spawnsObstaculos[posicion].transform.position, this.spawnsObstaculos[posicion].transform.rotation);
             }
             posicion++;

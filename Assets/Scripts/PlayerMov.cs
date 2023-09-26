@@ -12,7 +12,7 @@ public class PlayerMov : MonoBehaviour
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de mover de nuevo
-    private float intervalo = 0.07f;
+    private float intervalo = 0.03f;
 
     // Nivel de cordura
     private int cordura;
@@ -28,7 +28,7 @@ public class PlayerMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Movimiento();
     }

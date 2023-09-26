@@ -14,7 +14,13 @@ public class Enemy : MonoBehaviour
     {
         this.audioSourceEnemy = this.GetComponent<AudioSource>();
         // this.audioSourceBackpack = this.GetComponent<AudioSource>();
-        this.player = GameObject.Find("Paco").GetComponent<PlayerMov>();
+        try
+        {
+            this.player = GameObject.Find("Paco").GetComponent<PlayerMov>();
+        } catch (System.NullReferenceException)
+        {
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
