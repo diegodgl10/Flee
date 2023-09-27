@@ -1168,6 +1168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorredorPiso
       objectReference: {fileID: 0}
+    - target: {fileID: 7296915431402949640, guid: 26983612cf27dc34ebaa4a04c5f36ca9, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26983612cf27dc34ebaa4a04c5f36ca9, type: 3}
 --- !u!4 &6865438773116680383 stripped
@@ -1185,6 +1189,10 @@ PrefabInstance:
     - target: {fileID: 2310046036959343810, guid: 0781296acaafd224ba3c311552bbaa3d, type: 3}
       propertyPath: m_Name
       value: CorredorParedT2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310046036959343810, guid: 0781296acaafd224ba3c311552bbaa3d, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
       objectReference: {fileID: 0}
     - target: {fileID: 4693714981773080570, guid: 0781296acaafd224ba3c311552bbaa3d, type: 3}
       propertyPath: m_RootOrder
@@ -1248,6 +1256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorredorTecho
       objectReference: {fileID: 0}
+    - target: {fileID: 1832078331252517654, guid: f9f5169b6e01a1c419d18a83de2bb81b, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
+      objectReference: {fileID: 0}
     - target: {fileID: 9130966570549822528, guid: f9f5169b6e01a1c419d18a83de2bb81b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1309,6 +1321,10 @@ PrefabInstance:
     - target: {fileID: 2310046036959343810, guid: 0781296acaafd224ba3c311552bbaa3d, type: 3}
       propertyPath: m_Name
       value: CorredorParedT2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310046036959343810, guid: 0781296acaafd224ba3c311552bbaa3d, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
       objectReference: {fileID: 0}
     - target: {fileID: 4693714981773080570, guid: 0781296acaafd224ba3c311552bbaa3d, type: 3}
       propertyPath: m_RootOrder

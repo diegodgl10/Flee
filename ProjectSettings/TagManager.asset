@@ -11,6 +11,7 @@ TagManager:
   - Camilla
   - Botes
   - Archivero
+  - Estructura
   layers:
   - Default
   - TransparentFX

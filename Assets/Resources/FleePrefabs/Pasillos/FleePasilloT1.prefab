@@ -1095,7 +1095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8342494822649036910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 22}
+  m_LocalPosition: {x: 3, y: 0, z: 38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1258,6 +1258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorredorParedT1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6284204590116099612, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
 --- !u!4 &5393571008040031122 stripped
@@ -1275,6 +1279,10 @@ PrefabInstance:
     - target: {fileID: 1832078331252517654, guid: f9f5169b6e01a1c419d18a83de2bb81b, type: 3}
       propertyPath: m_Name
       value: CorredorTecho
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832078331252517654, guid: f9f5169b6e01a1c419d18a83de2bb81b, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
       objectReference: {fileID: 0}
     - target: {fileID: 9130966570549822528, guid: f9f5169b6e01a1c419d18a83de2bb81b, type: 3}
       propertyPath: m_RootOrder
@@ -1382,6 +1390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CorredorPiso
       objectReference: {fileID: 0}
+    - target: {fileID: 7296915431402949640, guid: 26983612cf27dc34ebaa4a04c5f36ca9, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26983612cf27dc34ebaa4a04c5f36ca9, type: 3}
 --- !u!4 &2896472405267497874 stripped
@@ -1443,6 +1455,10 @@ PrefabInstance:
     - target: {fileID: 6284204590116099612, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
       propertyPath: m_Name
       value: CorredorParedT1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284204590116099612, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}
+      propertyPath: m_TagString
+      value: Estructura
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ea0af95206e454abff0e2fa3e8f225, type: 3}

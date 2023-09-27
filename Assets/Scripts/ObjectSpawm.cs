@@ -47,12 +47,15 @@ public class ObjectSpawm : MonoBehaviour
             }
             posicion++;
         }
-        /*
+        
         posicion = 0;
         for (int i = 0; i < this.spawnsBotes.Length; i++)
         {
-            Instantiate(this.obstaculos[2], this.spawnsBotes[posicion].transform.position, this.spawnsBotes[posicion].transform.rotation);
+            int colocarlo = Random.Range(1, 4);
+            if (colocarlo != 1)
+            {
+                Instantiate(this.obstaculos[2], this.spawnsBotes[posicion].transform.position, this.spawnsBotes[posicion].transform.rotation);
+            }
         }
-        */
     }
 }

@@ -8,12 +8,13 @@ public class PlayerMov : MonoBehaviour
     // private float speed = 25, rotationalSpeed = 25;
     // Movimiento vertial y horizontal
     private float horizontalMov;
-    //private float upForce = 1000;
+    private float upForce = 370;
+    private float downForce = 15;
 
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de mover de nuevo
-    private float intervalo = 0.03f;
+    private float intervalo = 0.07f;
 
     // Nivel de cordura
     private int cordura;
@@ -28,11 +29,20 @@ public class PlayerMov : MonoBehaviour
     {
         this.cordura = 3;
         this.envirioment = GameObject.Find("Envirioment").GetComponent<Envirioment>();
+        this.rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            this.rigidBody.AddForce(Vector3.up * this.upForce);
+        }
+        else
+        {
+            this.rigidBody.AddForce(Vector3.down * this.downForce, ForceMode.Force);
+        }
         Movimiento();
     }
 
@@ -40,7 +50,7 @@ public class PlayerMov : MonoBehaviour
     private void Movimiento()
     {
         this.horizontalMov = Input.GetAxis("Horizontal");
-        if (this.horizontalMov != 0)
+        if (this.horizontalMov != 0 && TiempoDeEspera())
         {
             Vector3 nuevaPosicion;
             if (this.horizontalMov > 0)
@@ -51,18 +61,11 @@ public class PlayerMov : MonoBehaviour
                 nuevaPosicion = this.transform.position + Vector3.left * 4.0f;
             }
             bool puedeMoverse = !HayColision(nuevaPosicion);
-            if (puedeMoverse && TiempoDeEspera())
+            if (puedeMoverse)
             {
                 this.transform.position = nuevaPosicion;
             }
         }
-        /*
-        Saltar
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            this.rigidBody.AddForce(Vector3.up * this.upForce);
-        }
-        */
     }
 
     // Verifica si hay colisiones con objetos que tengan un BoxCollider
@@ -72,12 +75,25 @@ public class PlayerMov : MonoBehaviour
         Collider[] colliders = Physics.OverlapBox(posicionObjetivo, GetComponent<Collider>().bounds.size / 2);
         foreach (Collider collider in colliders)
         {
-            if (collider != GetComponent<Collider>())
+            Transform objetoTransform = collider.transform;
+            if (objetoTransform.CompareTag("Estructura"))
             {
                 return true;
             }
         }
         return false;
+        /*
+        Collider[] colliders = Physics.OverlapBox(posicionObjetivo, GetComponent<Collider>().bounds.size / 2);
+        foreach (Collider collider in colliders)
+        {
+            //if (collider.isTrigger == false && collider != GetComponent<Collider>())
+            if(collider.isTrigger == false)
+            {
+                return true;
+            }
+        }
+        return false;
+        */
     }
 
     // Nos indica si ya paso el tiempo de espera entre movimientos
