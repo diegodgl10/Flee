@@ -8,6 +8,7 @@ public class PlayerMov : MonoBehaviour
     // private float speed = 25, rotationalSpeed = 25;
     // Movimiento vertial y horizontal
     private float horizontalMov;
+    //private float upForce = 1000;
 
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
@@ -16,6 +17,8 @@ public class PlayerMov : MonoBehaviour
 
     // Nivel de cordura
     private int cordura;
+
+    public Rigidbody rigidBody;
 
     // Entorno de juego
     Envirioment envirioment;
@@ -28,7 +31,7 @@ public class PlayerMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Movimiento();
     }
@@ -53,6 +56,13 @@ public class PlayerMov : MonoBehaviour
                 this.transform.position = nuevaPosicion;
             }
         }
+        /*
+        Saltar
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            this.rigidBody.AddForce(Vector3.up * this.upForce);
+        }
+        */
     }
 
     // Verifica si hay colisiones con objetos que tengan un BoxCollider

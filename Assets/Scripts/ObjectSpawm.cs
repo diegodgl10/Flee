@@ -10,8 +10,8 @@ public class ObjectSpawm : MonoBehaviour
 
     // Spawn de obstaculos
     public GameObject[] spawnsObstaculos = new GameObject[14];
-    public GameObject[] obstaculos = new GameObject[2];
-
+    public GameObject[] obstaculos = new GameObject[3];
+    public GameObject[] spawnsBotes = new GameObject[3];
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +47,12 @@ public class ObjectSpawm : MonoBehaviour
             }
             posicion++;
         }
+        /*
+        posicion = 0;
+        for (int i = 0; i < this.spawnsBotes.Length; i++)
+        {
+            Instantiate(this.obstaculos[2], this.spawnsBotes[posicion].transform.position, this.spawnsBotes[posicion].transform.rotation);
+        }
+        */
     }
 }

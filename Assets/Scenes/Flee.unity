@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.15316296, g: 0.17385803, b: 0.18369645, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -553,6 +553,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1916898286, guid: 46724bfd82e864144a2a5598693aca28, type: 3}
+      propertyPath: rigidBody
+      value: 
+      objectReference: {fileID: 410736390}
+    - target: {fileID: 2345290031303887891, guid: 46724bfd82e864144a2a5598693aca28, type: 3}
+      propertyPath: m_Mass
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345290031303887891, guid: 46724bfd82e864144a2a5598693aca28, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2345290031303887900, guid: 46724bfd82e864144a2a5598693aca28, type: 3}
       propertyPath: m_Name
       value: Paco
@@ -738,6 +750,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224651442}
   m_CullTransparentMesh: 1
+--- !u!54 &410736390 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2345290031303887891, guid: 46724bfd82e864144a2a5598693aca28, type: 3}
+  m_PrefabInstance: {fileID: 223867350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &633225005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1671,7 +1688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd6de624d99e644488e80a392efed805, type: 2}
   m_sharedMaterial: {fileID: 9092631126402860231, guid: cd6de624d99e644488e80a392efed805, type: 2}
@@ -2310,14 +2327,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683162961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7066763, y: 0.024677724, z: -0.70667577, w: -0.024677742}
   m_LocalPosition: {x: 0, y: 5, z: 22.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 176, y: -450, z: 0}
 --- !u!1 &1683801295
 GameObject:
   m_ObjectHideFlags: 0
