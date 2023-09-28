@@ -9,7 +9,7 @@ public class GGamesLogo : MonoBehaviour
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de cambiar de pantalla
-    private float intervalo = 1.5f;
+    private float intervalo = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class GGamesLogo : MonoBehaviour
     {
         if (TiempoDeEspera())
         {
-            SceneManager.LoadScene("Flee");
+            SceneManager.LoadScene("Menu");
         }
     }
 
