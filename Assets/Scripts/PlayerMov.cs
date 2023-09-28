@@ -8,13 +8,13 @@ public class PlayerMov : MonoBehaviour
     // private float speed = 25, rotationalSpeed = 25;
     // Movimiento vertial y horizontal
     private float horizontalMov;
-    private float upForce = 370;
+    private float upForce = 366;
     private float downForce = 15;
 
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de mover de nuevo
-    private float intervalo = 0.07f;
+    private float intervalo = 0.085f;
 
     // Nivel de cordura
     private int cordura;
@@ -35,7 +35,7 @@ public class PlayerMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && TocandoSuelo())
         {
             this.rigidBody.AddForce(Vector3.up * this.upForce);
         }
@@ -44,6 +44,20 @@ public class PlayerMov : MonoBehaviour
             this.rigidBody.AddForce(Vector3.down * this.downForce, ForceMode.Force);
         }
         Movimiento();
+    }
+
+    private bool TocandoSuelo()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 7.5f))
+        {
+            if (hit.collider.CompareTag("Estructura"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     // Movimiento del jugador

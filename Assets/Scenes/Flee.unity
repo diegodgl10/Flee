@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 126502648}
   - component: {fileID: 126502651}
   m_Layer: 5
-  m_Name: ButtonExit
+  m_Name: ButtonMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 126502651}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: ReturnToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1785e05295397c14a8a6272db8bd394a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
   controls: {fileID: 0}
 --- !u!1001 &184798684
 PrefabInstance:
@@ -1633,6 +1634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1785e05295397c14a8a6272db8bd394a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
   controls: {fileID: 0}
 --- !u!1 &1025935247
 GameObject:

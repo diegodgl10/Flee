@@ -11,9 +11,9 @@ public class Buttons : MonoBehaviour
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de iniciar el juego
-    private float intervalo = 1.3f;
+    private float intervalo = 1.0f;
 
-    public void ExitGame()
+    public void ReturnToMenu()
     {
         SceneManager.LoadScene("Menu");
     }
@@ -31,6 +31,11 @@ public class Buttons : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("Flee");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     // Nos indica si ya paso el tiempo de espera entre movimientos
