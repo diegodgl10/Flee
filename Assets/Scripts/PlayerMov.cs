@@ -14,7 +14,7 @@ public class PlayerMov : MonoBehaviour
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de mover de nuevo
-    private float intervalo = 0.085f;
+    private float intervalo = 0.12f; // 0.085 movimiento mas rapido
 
     // Nivel de cordura
     private int cordura;
