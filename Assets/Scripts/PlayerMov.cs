@@ -17,7 +17,16 @@ public class PlayerMov : MonoBehaviour
     private float intervalo = 0.12f; // 0.085 movimiento mas rapido
 
     // Nivel de cordura
-    private int cordura;
+    private int cordura = 3;
+
+    // Mochila puesto
+    private float tiempoTranscurridoMochila = 0f;
+    private bool conMochila = false;
+    private float duracionMochila = 7.0f;
+
+    // Aspectps
+    public GameObject aspectoSinMochila;
+    public GameObject aspectoConMochila;
 
     public Rigidbody rigidBody;
 
@@ -27,7 +36,8 @@ public class PlayerMov : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.cordura = 3;
+        this.aspectoSinMochila.SetActive(true);
+        this.aspectoConMochila.SetActive(false);
         this.envirioment = GameObject.Find("Envirioment").GetComponent<Envirioment>();
         this.rigidBody = GetComponent<Rigidbody>();
     }
@@ -35,6 +45,17 @@ public class PlayerMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (this.conMochila)
+        {
+            this.tiempoTranscurridoMochila += Time.deltaTime;
+            if (this.tiempoTranscurridoMochila >= this.duracionMochila)
+            {
+                this.tiempoTranscurridoMochila = 0f;
+                QuitarMochila();
+            }
+        }
+
+
         if (Input.GetKeyDown(KeyCode.W) && TocandoSuelo())
         {
             this.rigidBody.AddForce(Vector3.up * this.upForce);
@@ -155,20 +176,49 @@ public class PlayerMov : MonoBehaviour
         return this.cordura;
     }
 
+    public bool GetConMochila()
+    {
+        return this.conMochila;
+    }
+
     /**
      * Diminuye en 1 el nivel de cordura
      */
     public void DisminuirCordura()
     {
+        if (this.conMochila)
+        {
+            if (this.cordura < 3)
+            {
+                this.cordura++;
+                return;
+            }
+        }
         if (this.cordura <= 1)
         {
             EliminarJugador("Enemy");
         }
         else
         {
-            this.cordura = this.cordura - 1;
+            this.cordura--;
             this.envirioment.SetCordura(this.cordura);
         }
+    }
+
+    public void PonerMochila()
+    {
+        this.aspectoSinMochila.SetActive(false);
+        this.aspectoConMochila.SetActive(true);
+        this.tiempoTranscurridoMochila = 0f;
+        this.conMochila = true;
+    }
+
+    private void QuitarMochila()
+    {
+        this.aspectoSinMochila.SetActive(true);
+        this.aspectoConMochila.SetActive(false);
+        this.tiempoTranscurridoMochila = 0f;
+        this.conMochila = true;
     }
 
 }

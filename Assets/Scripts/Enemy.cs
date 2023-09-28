@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     // Sonidos de interaccion
     public AudioClip audioClipEnemy;
     public AudioSource audioSourceEnemy;
+    // Sonidos de interaccion
+    public AudioClip audioClipAbsorbido;
+    public AudioSource audioSourceAbsorbido;
     private PlayerMov player;
 
     // Start is called before the first frame update
@@ -27,7 +30,13 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            this.audioSourceEnemy.PlayOneShot(this.audioClipEnemy);
+            if (!this.player.GetConMochila())
+            {
+                this.audioSourceEnemy.PlayOneShot(this.audioClipEnemy);
+            } else
+            {
+                this.audioSourceAbsorbido.PlayOneShot(this.audioClipEnemy);
+            }
             this.player.DisminuirCordura();
         }
     }

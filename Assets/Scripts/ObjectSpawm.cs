@@ -12,11 +12,27 @@ public class ObjectSpawm : MonoBehaviour
     public GameObject[] spawnsObstaculos = new GameObject[14];
     public GameObject[] obstaculos = new GameObject[3];
     public GameObject[] spawnsBotes = new GameObject[3];
+
+    // Spawn de mochila
+    public GameObject spawnMochila;
+    public GameObject mochila;
+
+    private PlayerMov player;
+
     // Start is called before the first frame update
     void Start()
     {
         SpawnEnemys();
         SpawnObstacles();
+        SpawnMochilas();
+        try
+        {
+            this.player = GameObject.Find("Paco").GetComponent<PlayerMov>();
+        }
+        catch (System.NullReferenceException)
+        {
+
+        }
     }
 
     // Spawnea enemigos de forma aleatoria
@@ -56,6 +72,14 @@ public class ObjectSpawm : MonoBehaviour
             {
                 Instantiate(this.obstaculos[2], this.spawnsBotes[posicion].transform.position, this.spawnsBotes[posicion].transform.rotation);
             }
+        }
+    }
+
+    private void SpawnMochilas()
+    {
+        if (this.player.GetCordura() < 3)
+        {
+            Instantiate(this.mochila, this.spawnsMochila.transform.position, this.spawnsMochila.transform.rotation);
         }
     }
 }
