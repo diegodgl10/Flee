@@ -38,6 +38,11 @@ public class Buttons : MonoBehaviour
         Application.Quit();
     }
 
+    public void CleanData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     // Nos indica si ya paso el tiempo de espera entre movimientos
     private bool TiempoDeEspera()
     {
