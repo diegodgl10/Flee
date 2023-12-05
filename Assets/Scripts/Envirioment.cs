@@ -9,6 +9,7 @@ public class Envirioment : MonoBehaviour
     public TMP_Text tmpDistancia;
     public TMP_Text tmpCordura;
     public TMP_Text gameOverDistancia;
+    public TMP_Text gameOverMejorDistancia;
     public TMP_Text gameOverMuerte;
     public GameObject screenGOInformation;
     public GameObject enemyScreen;
@@ -21,6 +22,8 @@ public class Envirioment : MonoBehaviour
 
     // Distancia recorrida por el personaje
     private int distancia;
+    // Mejor distancia obtenida en Flee
+    private int mejorDistancia;
     // Variable para contar tiempo
     private float tiempoTranscurrido = 0f;
     // Variable de tiempo de espera antes de mover de nuevo
@@ -37,6 +40,7 @@ public class Envirioment : MonoBehaviour
         this.audioSourceEnvirioment.PlayOneShot(this.audioClipEnvirioment);
 
         this.distancia = 0;
+        this.mejorDistancia = LoadData();
         this.tmpDistancia.text = "0";
 
         this.tmpCordura.text = this.corduraPlayer.ToString() + "/3";
@@ -80,6 +84,12 @@ public class Envirioment : MonoBehaviour
             this.gameOverMuerte.text = "Death by: \nCollision";
         }
         this.gameOverDistancia.text = "Distance:\n" + this.distancia.ToString();
+        if (this.distancia > this.mejorDistancia)
+        {
+            this.mejorDistancia = this.distancia;
+            this.SaveData();
+        }
+        this.gameOverMejorDistancia.text = "Best distance:\n" + this.mejorDistancia.ToString();
     }
 
     /* Calcula el tiempo de espera para actualizar la distancia */
@@ -109,5 +119,24 @@ public class Envirioment : MonoBehaviour
     {
         this.corduraPlayer = corduraPlayer;
         this.tmpCordura.text = this.corduraPlayer.ToString() + "/3";
+    }
+
+    /* Carga la mejor distancia registrada. */
+    private int LoadData()
+    {
+        if (PlayerPrefs.HasKey("score"))
+        {
+            return PlayerPrefs.GetInt("score");
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    /* Guarda la mejor distancia obtenida. */
+    private void SaveData()
+    {
+        PlayerPrefs.SetInt("score", this.mejorDistancia);
     }
 }
